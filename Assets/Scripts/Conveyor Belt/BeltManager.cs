@@ -12,7 +12,7 @@ public class BeltManager : MonoBehaviour
         Invoke("Tick", tickTime);
     }
 
-    private void Tick()
+    private void Tick() //A call to all items to move by one conveyor belt
     {
         Invoke("Tick", tickTime);
         items = GameObject.FindGameObjectsWithTag("item");

@@ -20,7 +20,7 @@ public class Bin : MonoBehaviour
         if(belt.item != null)
         {
             Item itemScript = belt.item.GetComponent<Item>();
-            if(itemScript.itemType.type == binType.type)
+            if(itemScript.itemType.type == binType.type)        //If the Item and Bin are of the same type, gives score, else it removes score
             {
                 score.AddScore(itemScript.scoreAdd);
             }

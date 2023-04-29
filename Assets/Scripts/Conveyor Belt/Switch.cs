@@ -5,8 +5,8 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     private Belt belt;
-    [SerializeField] private Belt[] nextBelts;
-    [SerializeField] private Color[] nextColors;
+    [SerializeField] private Belt[] nextBelts;  //Array for the possible next belts
+    [SerializeField] private Color[] nextColors;    //will be replaced with brick's art
     public int nextIndex = 0;
 
     private void Start() 
@@ -14,11 +14,9 @@ public class Switch : MonoBehaviour
         belt = GetComponent<Belt>();
     }
 
-    private void OnMouseDown() 
+    private void OnMouseDown() //When clicking on the switching Belt it switches to the next destination belt in the Array
     {
-        Debug.Log("Clicked on Belt");
         nextIndex++;
-        Debug.Log("Index: " + nextIndex);
         if(nextIndex >= nextBelts.Length)
         {
             nextIndex = 0;
