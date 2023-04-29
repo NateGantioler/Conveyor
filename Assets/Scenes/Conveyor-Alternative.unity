@@ -585,7 +585,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  packageRB: {fileID: 0}
 --- !u!212 &1569107648
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -712,7 +711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.5
-  packageRB: {fileID: 0}
 --- !u!212 &1705426764
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -960,7 +958,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1937371564}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.325, y: -0.12, z: 0}
+  m_LocalPosition: {x: -2.73, y: -0.09, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1182,6 +1180,30 @@ PrefabInstance:
     - target: {fileID: 6443105595282597752, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
       propertyPath: m_Name
       value: ConveyorSwitchDir4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443105595282597753, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443105595282597754, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443105595282597754, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
+      propertyPath: m_Size.y
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443105595282597754, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443105595282597754, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443105595282597754, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5ce27cc1ce3083428647f50a100274c, type: 3}
