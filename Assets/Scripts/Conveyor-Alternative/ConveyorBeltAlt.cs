@@ -38,6 +38,7 @@ public class ConveyorBeltAlt : MonoBehaviour
             return;
         }
         packageOnTop = false;
+        packageRB.velocity = new Vector2(0, 0);
     }
     
     private void FixedUpdate()
