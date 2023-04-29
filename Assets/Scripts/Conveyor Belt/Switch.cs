@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    private Belt belt;
-    [SerializeField] private Belt[] nextBelts;  //Array for the possible next belts
-    [SerializeField] private Color[] nextColors;    //will be replaced with brick's art
-    public int nextIndex = 0;
-
-    private void Start() 
+    private enum SwitchType
     {
-        belt = GetComponent<Belt>();
-    }
+        Dir2,
+        Dir4
+    } 
+    [SerializeField] private SwitchType type;
 
     private void OnMouseDown() //When clicking on the switching Belt it switches to the next destination belt in the Array
-    {
-        nextIndex++;
-        if(nextIndex >= nextBelts.Length)
+    {   
+        switch(type)
         {
-            nextIndex = 0;
+            case SwitchType.Dir2:
+                transform.Rotate(0,0,180);
+                break;
+            case SwitchType.Dir4:
+                transform.Rotate(0,0,90);
+                break;
+            default:
+                Debug.LogWarning("Switch Type Problem");
+                break;
         }
-        belt.nextBelt = nextBelts[nextIndex];
-        GetComponent<SpriteRenderer>().color = nextColors[nextIndex];
     }
-    
 }

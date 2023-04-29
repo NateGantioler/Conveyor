@@ -20,6 +20,7 @@ public class ConveyorBeltAlt : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         packageOnTop = false;
+        packageRB.velocity = new Vector2(0, 0);
     }
 
     private void FixedUpdate()
