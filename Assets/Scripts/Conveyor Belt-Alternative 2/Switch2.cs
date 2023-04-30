@@ -11,9 +11,6 @@ public class Switch2 : MonoBehaviour
     private enum initTag { up,down,left,right }
     [SerializeField] private initTag initialTag;
 
-    [SerializeField] public static Color lightOFF;
-    [SerializeField] public static Color lightON;
-
     private SpriteRenderer[] renderers;
 
     private void Start()
