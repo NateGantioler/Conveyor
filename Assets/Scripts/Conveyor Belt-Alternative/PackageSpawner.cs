@@ -35,7 +35,8 @@ public class PackageSpawner : MonoBehaviour
             // timer gets decreased in time
             spawnTimer -= Time.deltaTime;
         }
-        Debug.Log($"TIMER:{Mathf.FloorToInt(spawnTimer)}");
+
+        //Debug.Log($"TIMER:{Mathf.FloorToInt(spawnTimer)}");
     }
 
     private void SpawnPackage()

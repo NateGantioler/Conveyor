@@ -11,6 +11,10 @@ TagManager:
   - left
   - right
   - click
+  - red
+  - blue
+  - green
+  - intersection
   layers:
   - Default
   - TransparentFX
