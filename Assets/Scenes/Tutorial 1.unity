@@ -2937,6 +2937,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 1
-  packagePrefab: {fileID: 8214124779038690838, guid: 604f00af3792f4d43b1086804d690009, type: 3}
+  packagePrefab: {fileID: 8214124779038690838, guid: dee48dd09d327484da120b7113539e13, type: 3}
   spawnPosition: {fileID: 6096533404498679921}
   spawnOnce: 1

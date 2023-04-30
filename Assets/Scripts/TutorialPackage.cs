@@ -26,6 +26,7 @@ public class TutorialPackage : MonoBehaviour
         Destroy(this.gameObject);
     }
 
+    Scene scene;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,13 +36,13 @@ public class TutorialPackage : MonoBehaviour
             {
                 // then package has entered the correct end point
                 //UIManager.AddScore();
-                
-
-                print("AddScore() called.");
+                scene = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(scene.buildIndex+1);
+                //print("AddScore() called.");
             }
             else if (packageColor != collision.tag)
             {
-                
+                SceneManager.LoadScene(scene.buildIndex);
                 /*
                 if (collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
                 {
