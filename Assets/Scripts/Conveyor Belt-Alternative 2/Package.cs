@@ -43,52 +43,55 @@ public class Package : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(packageColor == collision.tag)
+        if(!collision.CompareTag("click"))
         {
-            // then package has entered the correct end point
-            UIManager.AddScore();
-            print("AddScore() called.");
-        }
-        else if(packageColor != collision.tag)
-        {
+            if(packageColor == collision.tag)
+            {
+                // then package has entered the correct end point
+                UIManager.AddScore();
+                print("AddScore() called.");
+            }
+            else if(packageColor != collision.tag)
+            {
+                if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
+                {
+                    // package has entered the wrong end point
+                    UIManager.SubtractScore();
+                    print("SubtractScore() called");
+                }
+            }
             if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
             {
-                // package has entered the wrong end point
-                UIManager.SubtractScore();
-                print("SubtractScore() called");
+                // in any case where the package enters an end point, make it disappear
+                Invoke("Disappear", 0.4f);
             }
-        }
-        if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
-        {
-            // in any case where the package enters an end point, make it disappear
-            Invoke("Disappear", 0.4f);
-        }
 
-        // checks the conveyor belt's tag to see which direction it goes
-        if (collision.tag == "up")
-        {
-            collisionDetected = true;
-            dir = 1;
-            return;
-        }
-        if (collision.tag == "down")
-        {
-            collisionDetected = true;
-            dir = 2;
-            return;
-        }
-        if (collision.tag == "left")
-        {
-            collisionDetected = true;
-            dir = 3;
-            return;
-        }
-        if (collision.tag == "right")
-        {
-            collisionDetected = true;
-            dir = 4;
-            return;
-        }
+            // checks the conveyor belt's tag to see which direction it goes
+            if (collision.tag == "up")
+            {
+                collisionDetected = true;
+                dir = 1;
+                return;
+            }
+            if (collision.tag == "down")
+            {
+                collisionDetected = true;
+                dir = 2;
+                return;
+            }
+            if (collision.tag == "left")
+            {
+                collisionDetected = true;
+                dir = 3;
+                return;
+            }
+            if (collision.tag == "right")
+            {
+                collisionDetected = true;
+                dir = 4;
+                return;
+            }   
+        } 
     }
 
     private void OnTriggerExit2D(Collider2D collision)
