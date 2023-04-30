@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
+    /*
     private enum SwitchType
     {
         Dir2,
         Dir4
     } 
     [SerializeField] private SwitchType type;
+    
 
     private void OnMouseDown() //When clicking on the switching Belt it switches to the next destination belt in the Array
     {   
@@ -26,4 +28,5 @@ public class Switch : MonoBehaviour
                 break;
         }
     }
+    */
 }
