@@ -10,6 +10,7 @@ TagManager:
   - down
   - left
   - right
+  - click
   - red
   - blue
   - green
