@@ -26,6 +26,9 @@ public class Package : MonoBehaviour
             case 2:
                 packageColor = "blue";
                 return;
+            case 3:
+                Debug.LogError("UNEXPECTED NUMBER");
+                return;
         }
 
     }
@@ -38,13 +41,12 @@ public class Package : MonoBehaviour
         if(packageColor == collision.tag)
         {
             // then package has entered the correct end point
-            UIManager.AddScore();   
-
+            UIManager.AddScore();
         }
         else if(packageColor != collision.tag)
         {
             // package has entered the wrong end point
-
+            UIManager.SubtractScore();
         }
         if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
         {
@@ -88,6 +90,7 @@ public class Package : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log(packageColor);
         if (collisionDetected) { Move(); }
     }
 

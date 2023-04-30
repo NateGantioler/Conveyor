@@ -67,7 +67,6 @@ public class Switch2 : MonoBehaviour
                 SetTag("right");
             }
         }
-        Debug.Log("This conveyor has down direction: "+d.down);
     }
     void SetTag(string tag) // sets the tag according to which directional key is pressed
     {
