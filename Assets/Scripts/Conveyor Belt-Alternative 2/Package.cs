@@ -7,9 +7,27 @@ public class Package : MonoBehaviour
 {
     public float speed;
     Rigidbody2D rb;
+
+    // used to check if package has entered the correct end point
+    private string packageColor;
+
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        int rand = Random.Range(0,3);
+        switch (rand)
+        {
+            case 0:
+                packageColor = "red";
+                return;
+            case 1:
+                packageColor = "green";
+                return;
+            case 2:
+                packageColor = "blue";
+                return;
+        }
+
     }
 
     int dir;
@@ -17,37 +35,56 @@ public class Package : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collisionDetected = true;
-        #region tag check
+        if(packageColor == collision.tag)
+        {
+            // then package has entered the correct end point
+            UIManager.AddScore();   
+
+        }
+        else if(packageColor != collision.tag)
+        {
+            // package has entered the wrong end point
+
+        }
+        if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
+        {
+            // in any case where the package enters an end point, make it disappear
+            Destroy(this.gameObject);
+        }
+
+
         // checks the conveyor belt's tag to see which direction it goes
         if (collision.tag == "up")
         {
+            collisionDetected = true;
             dir = 1;
             return;
         }
         if (collision.tag == "down")
         {
+            collisionDetected = true;
             dir = 2;
             return;
         }
         if (collision.tag == "left")
         {
+            collisionDetected = true;
             dir = 3;
             return;
         }
         if (collision.tag == "right")
         {
+            collisionDetected = true;
             dir = 4;
             return;
         }
-        #endregion
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         collisionDetected = false;
     }
-
+    
 
     private void Update()
     {
