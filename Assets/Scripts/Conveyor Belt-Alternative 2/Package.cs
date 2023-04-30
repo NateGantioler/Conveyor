@@ -18,10 +18,10 @@ public class Package : MonoBehaviour
         switch (rand)
         {
             case 0:
-                packageColor = "blue";
+                packageColor = "red";
                 return;
             case 1:
-                packageColor = "blue";
+                packageColor = "green";
                 return;
             case 2:
                 packageColor = "blue";

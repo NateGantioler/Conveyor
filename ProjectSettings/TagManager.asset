@@ -13,6 +13,7 @@ TagManager:
   - red
   - blue
   - green
+  - intersection
   layers:
   - Default
   - TransparentFX
