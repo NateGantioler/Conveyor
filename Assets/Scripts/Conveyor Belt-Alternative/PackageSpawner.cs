@@ -19,7 +19,10 @@ public class PackageSpawner : MonoBehaviour
 
     public void Start()
     {
-        Invoke("SpawnPackage", spawnInterval);
+        if (!spawnOnce)
+        {
+            Invoke("SpawnPackage", spawnInterval);
+        }
     }
 
     /*
@@ -45,7 +48,7 @@ public class PackageSpawner : MonoBehaviour
     }
     */
 
-    private void SpawnPackage()
+    public void SpawnPackage()
     {
         Instantiate(packagePrefab, spawnPosition.position, Quaternion.identity);
         if (spawnOnce) return;
