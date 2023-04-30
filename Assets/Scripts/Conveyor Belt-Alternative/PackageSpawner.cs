@@ -19,7 +19,7 @@ public class PackageSpawner : MonoBehaviour
     {
         spawnTimer = spawnInterval;
     }
-
+    
     public void Update()
     {
         if(spawnTimer <= 0)

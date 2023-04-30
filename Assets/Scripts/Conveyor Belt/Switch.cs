@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    
     private enum SwitchType
     {
         Dir2,
