@@ -6,16 +6,24 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     static int score;
-    [SerializeField] static int correctPackagePoints;
-    [SerializeField] static int wrongPackagePoints;
+    static int staticCorrectPackagePoints;
+    static int staticWrongPackagePoints;
+
+    public TextMeshProUGUI scoreText;
+    public int correctPackagePoints;
+    public int wrongPackagePoints;
 
     public TextMeshProUGUI timerText;
     public float startTimer;
     float timer;
+
     public GameObject endGameScreen;
 
     private void Start()
     {
+        staticCorrectPackagePoints = correctPackagePoints;
+        staticWrongPackagePoints = wrongPackagePoints;
+
         timer = startTimer;
         score = 0;
     }
@@ -24,6 +32,7 @@ public class UIManager : MonoBehaviour
     {
         print(score);
         timerText.text = Mathf.FloorToInt(timer).ToString();
+        scoreText.text = score.ToString();
         if (timer > 0)
         {
             timer -= Time.deltaTime;
@@ -41,7 +50,7 @@ public class UIManager : MonoBehaviour
 
     public static void AddScore()
     {
-        score += correctPackagePoints;
+        score += staticCorrectPackagePoints;
         print("score changed");
     }
     public static void SubtractScore()
@@ -49,7 +58,7 @@ public class UIManager : MonoBehaviour
         if (score <= 0) return;
         if (score > 0)
         { 
-            score -= wrongPackagePoints; 
+            score -= staticWrongPackagePoints; 
             if(score < 0) { score = 0; }
         }
         print("score changed");

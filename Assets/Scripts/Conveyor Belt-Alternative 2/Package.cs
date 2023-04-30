@@ -18,10 +18,10 @@ public class Package : MonoBehaviour
         switch (rand)
         {
             case 0:
-                packageColor = "red";
+                packageColor = "blue";
                 return;
             case 1:
-                packageColor = "green";
+                packageColor = "blue";
                 return;
             case 2:
                 packageColor = "blue";
@@ -47,13 +47,16 @@ public class Package : MonoBehaviour
         {
             // then package has entered the correct end point
             UIManager.AddScore();
-            print("AddScore() called");
+            print("AddScore() called.");
         }
         else if(packageColor != collision.tag)
         {
-            // package has entered the wrong end point
-            UIManager.SubtractScore();
-            print("SubtractScore() called");
+            if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
+            {
+                // package has entered the wrong end point
+                UIManager.SubtractScore();
+                print("SubtractScore() called");
+            }
         }
         if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
         {
