@@ -10,23 +10,27 @@ public class UIManager : MonoBehaviour
     [SerializeField] static int wrongPackagePoints;
 
     public TextMeshProUGUI timerText;
-    public float timer;
+    public float startTimer;
+    float timer;
     public GameObject endGameScreen;
 
     private void Start()
     {
+        timer = startTimer;
         score = 0;
     }
 
     private void Update()
     {
+        print(score);
         timerText.text = Mathf.FloorToInt(timer).ToString();
-        if(timer > 0)
+        if (timer > 0)
         {
             timer -= Time.deltaTime;
             return;
         }
         if (timer <= 0) EndOfGame();
+        
     }
 
     void EndOfGame()
@@ -38,7 +42,7 @@ public class UIManager : MonoBehaviour
     public static void AddScore()
     {
         score += correctPackagePoints;
-        print(score);
+        print("score changed");
     }
     public static void SubtractScore()
     {
@@ -48,7 +52,7 @@ public class UIManager : MonoBehaviour
             score -= wrongPackagePoints; 
             if(score < 0) { score = 0; }
         }
-        print(score);
+        print("score changed");
     }
 
 }

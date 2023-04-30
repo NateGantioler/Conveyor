@@ -36,24 +36,30 @@ public class Package : MonoBehaviour
     int dir;
     bool collisionDetected;
 
+    void Disappear()
+    {
+        Destroy(this.gameObject);
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(packageColor == collision.tag)
         {
             // then package has entered the correct end point
             UIManager.AddScore();
+            print("AddScore() called");
         }
         else if(packageColor != collision.tag)
         {
             // package has entered the wrong end point
             UIManager.SubtractScore();
+            print("SubtractScore() called");
         }
         if(collision.tag == "red" || collision.tag == "green" || collision.tag == "blue")
         {
             // in any case where the package enters an end point, make it disappear
-            Destroy(this.gameObject);
+            Invoke("Disappear", 0.4f);
         }
-
 
         // checks the conveyor belt's tag to see which direction it goes
         if (collision.tag == "up")
