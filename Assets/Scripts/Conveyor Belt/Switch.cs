@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Switch : MonoBehaviour
 {
-    /*
+    
     private enum SwitchType
     {
         Dir2,
@@ -28,5 +28,5 @@ public class Switch : MonoBehaviour
                 break;
         }
     }
-    */
+    
 }
