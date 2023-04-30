@@ -17,35 +17,41 @@ public class Package : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collisionDetected = true;
-        #region tag check
-        // checks the conveyor belt's tag to see which direction it goes
-        if (collision.tag == "up")
+        if(!collision.CompareTag("click"))
         {
-            dir = 1;
-            return;
+            collisionDetected = true;
+            #region tag check
+            // checks the conveyor belt's tag to see which direction it goes
+            if (collision.tag == "up")
+            {
+                dir = 1;
+                return;
+            }
+            if (collision.tag == "down")
+            {
+                dir = 2;
+                return;
+            }
+            if (collision.tag == "left")
+            {
+                dir = 3;
+                return;
+            }
+            if (collision.tag == "right")
+            {
+                dir = 4;
+                return;
+            }
+            #endregion
         }
-        if (collision.tag == "down")
-        {
-            dir = 2;
-            return;
-        }
-        if (collision.tag == "left")
-        {
-            dir = 3;
-            return;
-        }
-        if (collision.tag == "right")
-        {
-            dir = 4;
-            return;
-        }
-        #endregion
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        collisionDetected = false;
+        if(!collision.CompareTag("click"))
+        {
+            collisionDetected = false;
+        }
     }
 
 

@@ -3,7 +3,7 @@ using UnityEngine;
 public class Switch3 : MonoBehaviour
 {
     //Different Directions
-    private enum direction { Up, Right, Down, Left }
+    private enum direction {up, right, down, left}
 
     //currentDirection is also the starting direction
     [SerializeField] private direction currentDirection;
@@ -12,7 +12,12 @@ public class Switch3 : MonoBehaviour
     //In the inspector they are wirtten as Element 1-4, they are in clockwise order so up, right, down, left
     [SerializeField] private bool[] enabledDirectons = new bool[] { true, true, true, true };
 
-    private void OnMouseDown()
+    private void Start() 
+    {
+        SetTag(currentDirection.ToString());
+    }
+
+    public void ChangeDirection()
     {
         int nextDirection = (int)currentDirection;  //enum to int
 
@@ -24,6 +29,11 @@ public class Switch3 : MonoBehaviour
 
         // Update the current option
         currentDirection = (direction)nextDirection;    //int to enum
-        Debug.Log(currentDirection);
+        SetTag(currentDirection.ToString());
+    }
+
+    void SetTag(string tag) // sets the tag according to which directional key is pressed
+    {
+        this.gameObject.tag = tag; 
     }
 }
