@@ -12,26 +12,38 @@ public class Package : MonoBehaviour
     private string packageColor;
 
     // to be later replaced with corresponding sprites
-    public Color red, blue, green; 
+    
+    [System.Serializable]
+    public struct parcelSprites
+    {
+        public Sprite red;
+        public Sprite green;
+        public Sprite blue;
+    }
+    public parcelSprites sprites;
+
+    private SpriteRenderer SprRenderer;
 
     private void Start()
     {
         rb = this.GetComponent<Rigidbody2D>();
+        SprRenderer = this.GetComponent<SpriteRenderer>();
+        
         Random.InitState((int)System.DateTime.Now.Ticks); // makes things more random
         int rand = Random.Range(0,3);
         switch (rand)
         {
             case 0:
                 packageColor = "red";
-                this.GetComponent<SpriteRenderer>().color = red;
+                SprRenderer.sprite = sprites.red;
                 return;
             case 1:
                 packageColor = "green";
-                this.GetComponent<SpriteRenderer>().color = green;
+                SprRenderer.sprite = sprites.green;
                 return;
             case 2:
                 packageColor = "blue";
-                this.GetComponent<SpriteRenderer>().color = blue;
+                SprRenderer.sprite = sprites.blue;
                 return;
             case 3:
                 Debug.LogError("UNEXPECTED NUMBER");

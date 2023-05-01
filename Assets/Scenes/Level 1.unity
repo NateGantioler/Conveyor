@@ -5536,10 +5536,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2901329333772685283}
-  correctPackagePoints: 30
-  wrongPackagePoints: 30
+  correctPackagePoints: 50
+  wrongPackagePoints: 70
   timerText: {fileID: 2901329334227585582}
-  startTimer: 50
+  startTimer: 60
   endGameScreen: {fileID: 2901329333745199462}
   finalScoreText: {fileID: 2901329333112765600}
   packagesDeliveredText: {fileID: 2901329332954651704}

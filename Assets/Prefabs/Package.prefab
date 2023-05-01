@@ -48,9 +48,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  red: {r: 0.8490566, g: 0.11614456, b: 0.11614456, a: 1}
-  blue: {r: 0.06959773, g: 0.11542872, b: 0.8679245, a: 1}
-  green: {r: 0.19900784, g: 0.764151, b: 0.17661981, a: 1}
+  sprites:
+    red: {fileID: 21300000, guid: e8d0c0058dd183345baeb995aebeac45, type: 3}
+    green: {fileID: 21300000, guid: bb551d27858201d41a510046ee97565f, type: 3}
+    blue: {fileID: 21300000, guid: 3a5e987db1923724389ae274357a4e7a, type: 3}
 --- !u!212 &8214124779038690839
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -93,7 +94,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 0.8393082, b: 0.43867922, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
