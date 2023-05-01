@@ -16,6 +16,13 @@ public class Switch3 : MonoBehaviour
     // using randomly generated numbers
     // to determine if this conveyor belt will be hacked
 
+    private SpriteRenderer rendr;
+    [Space]
+    [Space]
+    public Sprite straight;
+    public Sprite curved;
+    public bool horizontal;
+    public bool angled;
 
     public bool isHacked()
     {
@@ -27,6 +34,8 @@ public class Switch3 : MonoBehaviour
 
     private void Start() 
     {
+        if (!angled) { this.GetComponent<Animator>().SetTrigger("animate"); }
+        rendr = this.GetComponent<SpriteRenderer>();
         SetTag(currentDirection.ToString());
         Invoke("isHacked", 1f);
     }
@@ -46,8 +55,58 @@ public class Switch3 : MonoBehaviour
         SetTag(currentDirection.ToString());
     }
 
-    void SetTag(string tag) // sets the tag according to which directional key is pressed
+    void SetTag(string tag)
     {
-        this.gameObject.tag = tag; 
+        this.gameObject.tag = tag;
+            
+        if (horizontal)
+        {
+                print("horizontal");
+                switch (tag)
+                {
+                    case "up":
+                        rendr.sprite = curved;
+                        rendr.flipX = false;
+                        rendr.flipY = false;
+                        return;
+                    case "down":
+                        rendr.sprite = curved;
+                        rendr.flipX = false;
+                        rendr.flipY = true;
+                        return;
+                    case "right":
+                        rendr.sprite = straight;
+                        return;
+                    case "left":
+                        rendr.sprite = straight;
+                        Debug.LogWarning("left should not be allowed");
+                        return;
+                }
+        }
+        else if (!horizontal)
+        {
+                print("not horizontal");
+                switch (tag)
+                {
+                    case "up":
+                        rendr.sprite = straight;
+                        this.transform.Rotate(Vector3.forward * 90);
+                        return;
+                    case "down":
+                        rendr.sprite = straight;
+                        this.transform.Rotate(Vector3.forward * 90);
+                        return;
+                    case "right":
+                        rendr.sprite = curved;
+                        rendr.flipX = true;
+                        rendr.flipY = true;
+                        return;
+                    case "left":
+                        rendr.sprite = curved;
+                        Debug.LogWarning("left should not be allowed");
+                        return;
+                }
+        }
+        
     }
 }
