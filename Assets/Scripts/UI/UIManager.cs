@@ -61,6 +61,7 @@ public class UIManager : MonoBehaviour
     {
         finalScoreText.text = score.ToString();
         packagesDeliveredText.text = packagesDelivered.ToString();
+        packagesDroppedText.text = packagesDropped.ToString();
         endGameScreen.SetActive(true);
         Time.timeScale = 0f;
     }
