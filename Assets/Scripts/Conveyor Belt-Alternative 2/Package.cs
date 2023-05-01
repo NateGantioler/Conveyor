@@ -69,6 +69,7 @@ public class Package : MonoBehaviour
             {
                 // then package has entered the correct end point
                 UIManager.AddScore();
+                SFXManager.instance.PlaySoundEffect("Chime02");
             }
             else if(packageColor != collision.tag)
             {
@@ -76,6 +77,7 @@ public class Package : MonoBehaviour
                 {
                     // package has entered the wrong end point
                     UIManager.SubtractScore();
+                    SFXManager.instance.PlaySoundEffect("Bad01");
                 }
             }
             // OPTIONAL: check if packages fall off from the conveyor belts by surrounding them with invisible walls
