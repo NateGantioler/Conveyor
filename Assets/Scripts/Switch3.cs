@@ -20,8 +20,8 @@ public class Switch3 : MonoBehaviour
     public bool isHacked()
     {
         int rand = Random.Range(0, 15);
-        if (rand == 1) { return true; }
-        else { Invoke("isHacked", 20f); return false; }
+        if (rand == 1) { print(this.gameObject.name+" HACKED"); return true; }
+        else { Invoke("isHacked", 1f); print(this.gameObject.name+" NOT HACKED"); return false; }
     }
     
 
@@ -29,7 +29,7 @@ public class Switch3 : MonoBehaviour
     private void Start() 
     {
         SetTag(currentDirection.ToString());
-        Invoke("isHacked", 20f);
+        Invoke("isHacked", 1f);
     }
 
     public void ChangeDirection()

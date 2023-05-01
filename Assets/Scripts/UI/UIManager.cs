@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -31,9 +32,14 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI finalScoreText;
     public TextMeshProUGUI packagesDeliveredText;
     public TextMeshProUGUI packagesDroppedText;
-
+    [Header("Reviews")]
+    public TextMeshProUGUI[] reviews; 
     public string[] goodReviews;
     public string[] badReviews;
+
+
+    public void LoadLevel(int lvl) { SceneManager.LoadScene(lvl); }
+    public void LoadLevel(string lvl) { SceneManager.LoadScene(lvl); }
 
     private void Start()
     {
@@ -65,6 +71,16 @@ public class UIManager : MonoBehaviour
         finalScoreText.text = score.ToString();
         packagesDeliveredText.text = packagesDelivered.ToString();
         packagesDroppedText.text = packagesDropped.ToString();
+
+        if(packagesDropped >= 3)
+        {
+            for (int i = 0; i < reviews.Length; i++)
+            {
+                //Random.InitState((int)System.DateTime.Now.Ticks));
+                
+            }
+        }
+
         endGameScreen.SetActive(true);
         Time.timeScale = 0f;
     }
