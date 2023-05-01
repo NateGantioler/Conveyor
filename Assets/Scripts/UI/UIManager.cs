@@ -32,6 +32,9 @@ public class UIManager : MonoBehaviour
     public TextMeshProUGUI packagesDeliveredText;
     public TextMeshProUGUI packagesDroppedText;
 
+    public string[] goodReviews;
+    public string[] badReviews;
+
     private void Start()
     {
         packagesDelivered = 0;

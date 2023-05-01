@@ -77,16 +77,17 @@ public class Package : MonoBehaviour
                 // in any case where the package enters an end point, make it disappear
                 Invoke("Disappear", 0.4f);
             }
-
             // checks the conveyor belt's tag to see which direction it goes
             if (collision.tag == "up")
             {
+                conveyorIsHacked = collision.GetComponent<Switch3>().isHacked();
                 collisionDetected = true;
                 dir = 1;
                 return;
             }
             if (collision.tag == "down")
             {
+                conveyorIsHacked = collision.GetComponent<Switch3>().isHacked();
                 collisionDetected = true;
                 dir = 2;
                 return;
@@ -99,6 +100,7 @@ public class Package : MonoBehaviour
             }
             if (collision.tag == "right")
             {
+                conveyorIsHacked = collision.GetComponent<Switch3>().isHacked();
                 collisionDetected = true;
                 dir = 4;
                 return;
@@ -123,7 +125,7 @@ public class Package : MonoBehaviour
 
     void Move()
     {
-        if (conveyorIsHacked)
+        if (!conveyorIsHacked)
         {
             switch (dir)
             {
@@ -141,7 +143,7 @@ public class Package : MonoBehaviour
                     return;
             }
         }
-        else if (!conveyorIsHacked)
+        else if (conveyorIsHacked)
         {
             switch (dir)
             {

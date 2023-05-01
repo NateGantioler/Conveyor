@@ -12,9 +12,24 @@ public class Switch3 : MonoBehaviour
     //In the inspector they are wirtten as Element 1-4, they are in clockwise order so up, right, down, left
     [SerializeField] private bool[] enabledDirectons = new bool[] { true, true, true, true };
 
+
+    // using randomly generated numbers
+    // to determine if this conveyor belt will be hacked
+
+
+    public bool isHacked()
+    {
+        int rand = Random.Range(0, 15);
+        if (rand == 1) { return true; }
+        else { Invoke("isHacked", 20f); return false; }
+    }
+    
+
+
     private void Start() 
     {
         SetTag(currentDirection.ToString());
+        Invoke("isHacked", 20f);
     }
 
     public void ChangeDirection()
@@ -23,7 +38,7 @@ public class Switch3 : MonoBehaviour
 
         do  //Checks thorugh all Directions until it find one that is enabled
         {   
-            nextDirection = (nextDirection + 1) % 4;    
+            nextDirection = (nextDirection + 1) % 4;
         } 
         while (!enabledDirectons[nextDirection]);
 
