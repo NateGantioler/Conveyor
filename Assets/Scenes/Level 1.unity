@@ -4163,7 +4163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentDirection: 1
-<<<<<<< HEAD
   enabledDirectons: 01010101
 --- !u!1 &1779344096
 GameObject:
@@ -4249,13 +4248,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
-=======
-  enabledDirectons: 00000000
-  straight: {fileID: 0}
-  curved: {fileID: 0}
-  horizontal: 1
-  animated: 0
->>>>>>> main
 --- !u!1 &2114282044
 GameObject:
   m_ObjectHideFlags: 0
