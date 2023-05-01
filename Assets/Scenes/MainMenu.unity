@@ -1040,6 +1040,7 @@ MonoBehaviour:
   spawnInterval: 2
   packagePrefab: {fileID: 8214124779038690838, guid: 604f00af3792f4d43b1086804d690009, type: 3}
   spawnPosition: {fileID: 1592510470}
+  spawnOnce: 0
 --- !u!212 &306726224
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3887,7 +3888,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Brick: \t\t\t\t\t    Art\nBruce Ashbey:        Music & Sound\nCraapy:
+  m_text: "Brick2Face: \t\t\t\t\t    Art\nBruce Ashbey:        Music & Sound\nCraapy:
     \t\t\t  Programming\nMikado: \t\t  \t  Programming"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
