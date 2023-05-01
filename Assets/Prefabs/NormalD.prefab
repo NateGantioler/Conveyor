@@ -93,7 +93,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8399087290662388023}
-  - component: {fileID: 8399087290662388020}
+  - component: {fileID: 9097203410361295508}
   - component: {fileID: 8399087290662388016}
   - component: {fileID: 8399087290662388021}
   m_Layer: 0
@@ -119,7 +119,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8399087290662388020
+--- !u!114 &9097203410361295508
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -128,16 +128,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8399087290662388017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd6ac6e6415c38a40a42e04bb8a6c127, type: 3}
+  m_Script: {fileID: 11500000, guid: 001f7f9f9c55ad24f9ce69aca523a1b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canSwitch: 0
-  initialTag: 1
-  possibleDirections:
-    up: 0
-    down: 1
-    left: 0
-    right: 0
+  currentDirection: 0
+  enabledDirectons: 01010101
 --- !u!212 &8399087290662388016
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -214,5 +209,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0

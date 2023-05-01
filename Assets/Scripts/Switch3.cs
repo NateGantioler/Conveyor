@@ -21,7 +21,7 @@ public class Switch3 : MonoBehaviour
     {
         int rand = Random.Range(0, 15);
         if (rand == 1) { print(this.gameObject.name+" HACKED"); return true; }
-        else { Invoke("isHacked", 1f); print(this.gameObject.name+" NOT HACKED"); return false; }
+        else { Invoke("isHacked", 1f); return false; }
     }
 
 

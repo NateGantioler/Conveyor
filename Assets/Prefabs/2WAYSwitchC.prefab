@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7711438331292154613}
+  - component: {fileID: 7711438331292154614}
   - component: {fileID: 7711438331292154618}
   - component: {fileID: 7711438331292154619}
-  - component: {fileID: 7711438331292154614}
   m_Layer: 0
   m_Name: 2WAYSwitchC
   m_TagString: Untagged
@@ -37,6 +37,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7711438331292154614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711438331292154617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001f7f9f9c55ad24f9ce69aca523a1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDirection: 1
+  enabledDirectons: 01010000
 --- !u!61 &7711438331292154618
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -115,20 +129,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7711438331292154614
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7711438331292154617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 001f7f9f9c55ad24f9ce69aca523a1b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentDirection: 1
-  enabledDirectons: 01010000
 --- !u!1 &7711438331681474783
 GameObject:
   m_ObjectHideFlags: 0
