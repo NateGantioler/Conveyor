@@ -16,7 +16,6 @@ public class SFXManager : MonoBehaviour
 {
     /*This is a pretty simple version of the SFX Manager, you can access it in any other script without needing a reference
     Just use "SFXManager.instance.PlaySoundEffect()"
-    
     */
 
     public static SFXManager instance;
@@ -24,6 +23,8 @@ public class SFXManager : MonoBehaviour
     [SerializeField] private AudioSource soundEffectSource;
 
     public List<SoundEffect> soundEffects;
+
+    private float generalVolume;
 
     void Awake()
     {
@@ -44,7 +45,7 @@ public class SFXManager : MonoBehaviour
         if (sfx != null)
         {
             soundEffectSource.clip = sfx.clip;
-            soundEffectSource.volume = sfx.volume;
+            soundEffectSource.volume = sfx.volume * generalVolume;
             float pitchVariation = Random.Range(-sfx.pitchVariation, sfx.pitchVariation);
             soundEffectSource.pitch = sfx.pitch + pitchVariation;
             soundEffectSource.Play();
@@ -52,6 +53,18 @@ public class SFXManager : MonoBehaviour
         else
         {
             Debug.LogWarning("Sound effect " + name + " not found in AudioManager.");
+        }
+    }
+
+    public void MuteSFX(bool mute)
+    {
+        if(mute)
+        {
+            generalVolume = 0;
+        }
+        else
+        {
+            generalVolume = 1;
         }
     }
 }

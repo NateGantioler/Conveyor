@@ -23,6 +23,8 @@ public class MusicManager : MonoBehaviour
 
     private bool isPlaying = false;
 
+    private float generalVolume;
+
     void Awake()
     {
         if (instance == null)
@@ -61,11 +63,25 @@ public class MusicManager : MonoBehaviour
         currentTrack = musicTracks[currentTrackIndex];
 
         musicSource.clip = currentTrack.clip;
-        musicSource.volume = currentTrack.volume;
+        musicSource.volume = currentTrack.volume * generalVolume;
         musicSource.Play();
 
         isPlaying = true;
 
         Debug.Log("Playing: " + currentTrack.name);
+    }
+
+    public void MuteMusic(bool mute)
+    {
+        if(mute)
+        {
+            musicSource.volume = 0;
+            generalVolume = 0;
+        }
+        else
+        {
+            musicSource.volume = currentTrack.volume;
+            generalVolume = 0;
+        }
     }
 }
