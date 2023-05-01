@@ -131,7 +131,6 @@ public class Package : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(packageColor);
         if (collisionDetected) { Move(); }
     }
 
