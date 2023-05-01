@@ -22,7 +22,7 @@ public class Switch3 : MonoBehaviour
     public Sprite straight;
     public Sprite curved;
     public bool horizontal;
-    public bool angled;
+    public bool animated;
 
     public bool isHacked()
     {
@@ -34,7 +34,7 @@ public class Switch3 : MonoBehaviour
 
     private void Start() 
     {
-        if (!angled) { this.GetComponent<Animator>().SetTrigger("animate"); }
+        if (animated) { this.GetComponent<Animator>().SetTrigger("animate"); }
         rendr = this.GetComponent<SpriteRenderer>();
         SetTag(currentDirection.ToString());
         Invoke("isHacked", 1f);
@@ -58,7 +58,7 @@ public class Switch3 : MonoBehaviour
     void SetTag(string tag)
     {
         this.gameObject.tag = tag;
-            
+        
         if (horizontal)
         {
                 print("horizontal");
@@ -90,11 +90,9 @@ public class Switch3 : MonoBehaviour
                 {
                     case "up":
                         rendr.sprite = straight;
-                        this.transform.Rotate(Vector3.forward * 90);
                         return;
                     case "down":
                         rendr.sprite = straight;
-                        this.transform.Rotate(Vector3.forward * 90);
                         return;
                     case "right":
                         rendr.sprite = curved;
