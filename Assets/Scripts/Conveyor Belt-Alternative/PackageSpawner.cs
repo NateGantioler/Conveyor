@@ -8,18 +8,25 @@ public class PackageSpawner : MonoBehaviour
     public float spawnInterval;
 
     // timer that gets decreased as time passes. It gets reset to the interval everytime it reaches 0
-    private float spawnTimer;
+    //private float spawnTimer;
 
     // package gameobject to spawn
     public GameObject packagePrefab;
 
     public Transform spawnPosition;
 
+    public bool spawnOnce;
+
     public void Start()
     {
-        spawnTimer = spawnInterval;
+        if (!spawnOnce)
+        {
+            Invoke("SpawnPackage", spawnInterval);
+        }
     }
-    
+
+    /*
+
     public void Update()
     {
         if(spawnTimer <= 0)
@@ -28,6 +35,7 @@ public class PackageSpawner : MonoBehaviour
             spawnTimer = spawnInterval;
             // package gets spawned
             SpawnPackage();
+            
             return;
         }
         if(spawnTimer > 0)
@@ -38,10 +46,13 @@ public class PackageSpawner : MonoBehaviour
 
         //Debug.Log($"TIMER:{Mathf.FloorToInt(spawnTimer)}");
     }
+    */
 
-    private void SpawnPackage()
+    public void SpawnPackage()
     {
         Instantiate(packagePrefab, spawnPosition.position, Quaternion.identity);
+        if (spawnOnce) return;
+        Invoke("SpawnPackage", spawnInterval);
     }
 
 }

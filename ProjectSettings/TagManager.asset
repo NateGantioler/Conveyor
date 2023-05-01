@@ -15,6 +15,7 @@ TagManager:
   - blue
   - green
   - intersection
+  - outofbounds
   layers:
   - Default
   - TransparentFX

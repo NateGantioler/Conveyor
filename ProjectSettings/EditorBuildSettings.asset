@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Conveyor.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Tutorial 1.unity
+    guid: fc7b23de9205b8146a81dc4760a5c892
+  - enabled: 1
+    path: Assets/Scenes/Conveyor-Alternative2 Turn.unity
+    guid: bf5592c91e38eaf4394cb6cd0e3576e3
   m_configObjects: {}
