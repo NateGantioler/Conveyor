@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour
     public void LoadLevel(int lvl) { SceneManager.LoadScene(lvl); }
     public void LoadLevel(string lvl) { SceneManager.LoadScene(lvl); }
 
+    bool endOfGameExecuted;
     private void Start()
     {
         packagesDelivered = 0;
@@ -48,9 +49,12 @@ public class UIManager : MonoBehaviour
         staticCorrectPackagePoints = correctPackagePoints;
         staticWrongPackagePoints = wrongPackagePoints;
 
+        endOfGameExecuted = false;
+
         timer = startTimer;
         score = 0;
     }
+
 
     private void Update()
     {
@@ -62,7 +66,7 @@ public class UIManager : MonoBehaviour
             timer -= Time.deltaTime;
             return;
         }
-        if (timer <= 0) EndOfGame();
+        if (timer <= 0 && !endOfGameExecuted) { EndOfGame(); endOfGameExecuted = true; }
         
     }
 
@@ -72,12 +76,24 @@ public class UIManager : MonoBehaviour
         packagesDeliveredText.text = packagesDelivered.ToString();
         packagesDroppedText.text = packagesDropped.ToString();
 
+        // REVIEW
+
         if(packagesDropped >= 3)
         {
             for (int i = 0; i < reviews.Length; i++)
             {
                 //Random.InitState((int)System.DateTime.Now.Ticks));
-                
+                int rand = Random.Range(0, badReviews.Length);
+                reviews[i].text = badReviews[rand];
+            }
+        }
+        else if (packagesDropped < 3)
+        {
+            for (int i = 0; i < reviews.Length; i++)
+            {
+                //Random.InitState((int)System.DateTime.Now.Ticks));
+                int rand = Random.Range(0, goodReviews.Length);
+                reviews[i].text = goodReviews[rand];
             }
         }
 

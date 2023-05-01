@@ -23,7 +23,6 @@ public class Switch3 : MonoBehaviour
         if (rand == 1) { print(this.gameObject.name+" HACKED"); return true; }
         else { Invoke("isHacked", 1f); print(this.gameObject.name+" NOT HACKED"); return false; }
     }
-    
 
 
     private void Start() 
