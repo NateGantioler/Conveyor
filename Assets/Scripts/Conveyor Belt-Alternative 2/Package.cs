@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof (Rigidbody2D))]
 public class Package : MonoBehaviour
 {
+    public GameObject Bad01, Chime02;
+
     public float speed;
     Rigidbody2D rb;
 
@@ -69,7 +71,7 @@ public class Package : MonoBehaviour
             {
                 // then package has entered the correct end point
                 UIManager.AddScore();
-                SFXManager.instance.PlaySoundEffect("Chime02");
+                Instantiate(Chime02);
             }
             else if(packageColor != collision.tag)
             {
@@ -77,7 +79,7 @@ public class Package : MonoBehaviour
                 {
                     // package has entered the wrong end point
                     UIManager.SubtractScore();
-                    SFXManager.instance.PlaySoundEffect("Bad01");
+                    Instantiate(Bad01);
                 }
             }
             // OPTIONAL: check if packages fall off from the conveyor belts by surrounding them with invisible walls

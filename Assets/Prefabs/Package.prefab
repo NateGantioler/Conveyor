@@ -47,6 +47,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bba7264e76c9be84696ffa0f720c323d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Bad01: {fileID: 747130975007361230, guid: af51dee65843ffd4e8a4845eaae3ce08, type: 3}
+  Chime02: {fileID: 5336414482907687871, guid: 5baaca8764f77c44bace522dbe2cffce, type: 3}
   speed: 1
   sprites:
     red: {fileID: 21300000, guid: e8d0c0058dd183345baeb995aebeac45, type: 3}

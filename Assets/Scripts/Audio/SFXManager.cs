@@ -26,6 +26,11 @@ public class SFXManager : MonoBehaviour
 
     private float generalVolume;
 
+    private void Start()
+    {
+        generalVolume = 1;
+    }
+
     void Awake()
     {
         if (instance == null)
@@ -56,6 +61,7 @@ public class SFXManager : MonoBehaviour
         }
     }
 
+    /*
     public void MuteSFX(bool mute)
     {
         if(mute)
@@ -67,4 +73,5 @@ public class SFXManager : MonoBehaviour
             generalVolume = 1;
         }
     }
+    */
 }
